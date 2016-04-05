@@ -19,7 +19,7 @@ public class entitySuppliers
     private string _country;
 
     //map each property as a COLUMN
-    [Column (IsPrimaryKey=true,Storage="_supplierID")]
+    [Column(IsPrimaryKey = true, Storage = "_supplierID")]
     public int SupplierID
     {
         get
