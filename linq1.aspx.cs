@@ -13,12 +13,12 @@ public partial class linq1 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
     }
     protected void cmdGet_Click(object sender, EventArgs e)
-    {
-        //need to fix this part!!!
-        TabelFactory myTable = new TabelFactory();
+    {        
+        DataTable myTable = TabelFactory.makeTable();
+
         //create CLOSED connection instance
         string path = Server.MapPath("/");
         string connStr = "Provider=Microsoft.Jet.OLEDB.4.0;" +
@@ -38,7 +38,7 @@ public partial class linq1 : System.Web.UI.Page
         foreach (entitySuppliers row in query)
         {
             DataRow dr = myTable.NewRow();
-            dr["SupplireID"] = row.SupplierID;
+            dr["SupplierID"] = row.SupplierID;
             dr["CompanyName"] = row.CompanyName;
             dr["City"] = row.City;
             dr["Country"] = row.Country;

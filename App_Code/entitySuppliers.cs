@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 
+using System.Data;
 using System.Data.Linq.Mapping;
 
 //class represents SCHEMA for retrived data
@@ -32,6 +32,7 @@ public class entitySuppliers
         }
     }
 
+    [Column(Storage = "_companyName")]
     public string CompanyName
     {
         get
@@ -44,6 +45,7 @@ public class entitySuppliers
         }
     }
 
+    [Column(Storage = "_city")]
     public string City
     {
         get
@@ -56,6 +58,7 @@ public class entitySuppliers
         }
     }
 
+    [Column(Storage = "_country")]
     public string Country
     {
         get
